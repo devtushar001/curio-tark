@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from "cloudinary";
-import imageModel from "../Models/ImageModel.js";
+import imageModel from '../models/imageModel.js';
 
 export const uploadImageController = async (req, res) => {
 
