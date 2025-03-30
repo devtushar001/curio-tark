@@ -8,6 +8,7 @@ import a7 from "./js.png";
 import a8 from "./cross.png";
 import a9 from "./bin.png";
 import a10 from "./edit.png";
+import a11 from "./booking.png";
 
 let nav_icon = {
   heart_icon: a1,
@@ -19,7 +20,8 @@ let nav_icon = {
   logo_icon: a7,
   cross_icon: a8,
   bin_icon: a9,
-  edit_icon: a10
+  edit_icon: a10,
+  booking_icon: a11
 }
 
 export default nav_icon;

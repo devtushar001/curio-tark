@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { fassets } from "../../../../client/src/frontend_assets/assets"
 import "./Orders.css";
+import nav_icon from "../../assets/db";
+import { QuroTarkContext } from "../../QuroTarkContext/QuroTarkContext";
 
 const Orders = ({ url, token }) => {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { readDate } = useContext(QuroTarkContext);
 
-  // Fetch the list of orders
   const orderList = async () => {
     try {
       setIsLoading(true);
@@ -118,7 +119,7 @@ const Orders = ({ url, token }) => {
         ) : (
           orders.map((order) => (
             <div key={order._id} className="order-item">
-              <img src={fassets.parcel_icon} alt="Order Icon" />
+              <img src={nav_icon.booking_icon} alt="Order Icon" />
               <div>
                 <p className="order-item-accessory">
                   {order.items
@@ -135,9 +136,13 @@ const Orders = ({ url, token }) => {
                 <div className="order-item-address">
                   <p>
                     {order.address?.street}, {order.address?.city},{" "}
+                    <br />
                     {order.address?.state}, {order.address?.country},{" "}
+                    <br />
                     {order.address?.zipcode}
                   </p>
+                  <br />
+                  <p>{readDate(order.updatedAt)}</p>
                 </div>
                 <p className="order-item-phone">{order.address?.phone}</p>
               </div>
