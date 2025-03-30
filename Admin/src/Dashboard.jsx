@@ -10,7 +10,7 @@ import Home from "./pages/Home/Home";
 import Orders from "./pages/Orders/Orders";
 
 const Dashboard = () => {
-  const url = 'http://localhost:10019';
+  const url = 'https://curio-tark-backend.onrender.com';
   const token = localStorage.getItem("token");
 
   const [active, setActive] = useState("dashboard");
@@ -37,7 +37,7 @@ const Dashboard = () => {
       </aside>
       <div className="conflict-setup"></div>
       <Routes>
-        <Route path="/" element={<Home url={url} token={token}/>} />
+        <Route path="/" element={<Home url={url} token={token} />} />
         <Route path="/login" element={<LoginSignup url={url} token={token} />} />
         <Route path="/dashboard" element={<DashboardContent url={url} token={token} />} />
         <Route path="/products" element={<Products url={url} token={token} />} />
