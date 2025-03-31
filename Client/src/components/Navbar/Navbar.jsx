@@ -74,6 +74,9 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </div>
+            <div className="conflict">
+
+            </div>
         </>
     )
 }

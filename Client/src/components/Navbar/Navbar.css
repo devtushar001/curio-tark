@@ -12,6 +12,10 @@
     padding: 0 20px;
 }
 
+.conflict {
+    margin-top: 110px;
+}
+
 .navbar .logo {
     width: 130px;
     cursor: pointer;
@@ -187,6 +191,10 @@
         padding: 10px 20px;
     }
 
+    .conflict {
+        margin-top: 80px;
+    }
+
     .navbar-menu {
         gap: 15px;
         font-size: 16px;
@@ -202,6 +210,10 @@
         /* flex-direction: column; */
         align-items: center;
         justify-content: space-between;
+    }
+
+    .conflict {
+        margin-top: 75px;
     }
 
     .navbar-menu {
@@ -237,6 +249,9 @@
         width: 100px;
     }
 
+    .conflict {
+        margin-top: 70px;
+    }
     .navbar button {
         font-size: 14px;
         padding: 6px 15px;

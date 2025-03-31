@@ -18,13 +18,12 @@ const Cart = () => {
                 <div className="cart-items">
                     <div className="cart-items-title">
                         <p>Items</p>
-                        <p>Title</p>
+                         <p>Title</p>
                         <p>Price</p>
-                        <p>Quantity</p>
+                        <p>Qty</p>
                         <p>Total</p>
                         <p>Remove</p>
                     </div>
-                    <br />
                     <hr />
                     {bikeAccessories.map((item, i) => {
                         if (cartItem[item._id] > 0) {
@@ -61,7 +60,7 @@ const Cart = () => {
                             <p>Total</p>
                             <p>&#8377;{getTotalCartAmount()}</p>
                         </div>
-                        <button onClick={() => navigate('/razor-pay')}>PROCEED TO CHECKOUT</button>
+                        <button className="proceed-checkout" onClick={() => navigate('/razor-pay')}>PROCEED TO CHECKOUT</button>
                     </div>
                     <div className="cart-promocode">
                         <div>
@@ -73,7 +72,7 @@ const Cart = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

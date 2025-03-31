@@ -254,7 +254,7 @@ const RazorPayment = () => {
                     <hr />
                     <div className="cart-total-details">
                         <p>Shipping Fee + GST</p>
-                        <p>&#8377;50</p>
+                        <p>&#8377; 0</p>
                     </div>
                     <hr />
                     <div className="cart-total-details">
