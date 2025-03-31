@@ -21,7 +21,7 @@ accessoryRouter.post("/add", verifyToken, addAccessory);
 // retriving all accessory list 
 accessoryRouter.get("/list", accessoryList);
 // remove accessory item from database
-accessoryRouter.delete("/remove", removeAccessory);
+accessoryRouter.post("/remove", removeAccessory);
 
 
 

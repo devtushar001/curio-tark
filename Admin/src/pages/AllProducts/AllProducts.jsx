@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './AllProducts.css';
-import nav_icon from '../../assets/db';
+import nav_icon from '../../assets/db'; // Ensure this file exports `edit_icon` & `bin_icon`
+import { toast } from 'react-toastify';
 
 const ProductList = ({ token, url }) => {
   const [products, setProducts] = useState([]);
@@ -8,7 +9,7 @@ const ProductList = ({ token, url }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`${url}/api/accessory/list`) // Replace with your API URL
+    fetch(`${url}/api/accessory/list`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch products');
@@ -24,7 +25,29 @@ const ProductList = ({ token, url }) => {
         setError(error.message);
         setLoading(false);
       });
-  }, []);
+  }, [url]); // Added url as dependency
+
+  const deleteProduct = async (productId) => { // Fixed function name
+    try {
+      const response = await fetch(`${url}/api/accessory/remove`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}` // Added token for authentication
+        },
+        body: JSON.stringify({ productId })
+      });
+
+      if (!response.ok) throw new Error("Something went wrong");
+      const data = await response.json();
+      if (!data.success) return toast.error(data.message);
+
+      toast.warning(data.message);
+      setProducts((prevProducts) => prevProducts.filter(product => product._id !== productId)); // Remove deleted product from state
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   if (loading) return <p>Loading products...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -39,15 +62,11 @@ const ProductList = ({ token, url }) => {
             <p className="product-description">{product.description}</p>
             <p className="product-old-price">₹{product.price.oldPrice}</p>
             <p className="product-new-price">₹{product.price.newPrice}</p>
-            <div className="product-tags">
-              {product.tags.map((tag, index) => (
-                <span key={index}  className="product-tag">{tag},</span>
-              ))}
-            </div>  
+            <p className="product-tags">{product.tags.join(", ")}</p> {/* Fixed comma issue */}
           </div>
           <div className="product-options">
-            <img src={nav_icon.edit_icon} alt="" />
-            <img src={nav_icon.bin_icon} alt="" />
+            <img src={nav_icon.edit_icon} alt="Edit" />
+            <img onClick={() => deleteProduct(product._id)} src={nav_icon.bin_icon} alt="Delete" />
           </div>
         </div>
       ))}

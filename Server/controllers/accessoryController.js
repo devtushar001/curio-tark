@@ -67,7 +67,7 @@ const accessoryList = async (req, res) => {
 
 // Remove an accessory
 const removeAccessory = async (req, res) => {
-  const productId = req.body.id;
+  const {productId} = req.body;
 
   if (!productId || !mongoose.Types.ObjectId.isValid(productId)) {
     return res.json({

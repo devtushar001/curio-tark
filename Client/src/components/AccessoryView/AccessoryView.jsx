@@ -16,7 +16,7 @@ const AccessoryView = ({ item }) => {
 
         window.scrollTo(0, 0);
         return () => clearTimeout(timer);
-    }, [mainImage]); 
+    }, [mainImage]);
 
     return (
         <div className="accessory-view">

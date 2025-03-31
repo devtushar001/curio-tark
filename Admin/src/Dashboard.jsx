@@ -10,7 +10,7 @@ import Home from "./pages/Home/Home";
 import Orders from "./pages/Orders/Orders";
 
 const Dashboard = () => {
-  const url = 'https://curio-tark-backend.onrender.com';
+  const url = 'http://localhost:10019';
   const token = localStorage.getItem("token");
 
   const [active, setActive] = useState("dashboard");
