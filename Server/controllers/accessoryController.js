@@ -15,7 +15,6 @@ const addAccessory = async (req, res) => {
       tags
     } = req.body;
 
-    console.log(req.body)
 
     if (!name || !category || !price || !description || !featuredImage) {
       return res.json({ success: false, message: "Missing required fields" });
@@ -31,7 +30,6 @@ const addAccessory = async (req, res) => {
       tags
     });
 
-    console.log("New Product Added:", newProduct);
 
     return res.json({
       success: true,

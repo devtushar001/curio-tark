@@ -34,7 +34,6 @@ const addNestedCtg = async (req, res) => {
 const addMenuSub = async (req, res) => {
     try {
         const { menu_name, new_sub } = req.body;
-        console.log(menu_name, new_sub)
         // Validate the input
         if (!menu_name || !new_sub) {
             return res.status(400).json({ message: 'menu_name and new_sub are required.' });
@@ -63,7 +62,6 @@ const addMenuSub = async (req, res) => {
 };
 
 const categoryAll = async (req, res) => {
-    console.log("nested category controller functioning but...")
     try {
         const allCategories = await nestedCtgModel.find();
 
@@ -110,8 +108,6 @@ const deleteParent = async (req, res) => {
 const deleteSubCategory = async (req, res) => {
     try {
         const { parentId, subId } = req.body;
-        console.log(req.body.parentId);
-        console.log(req.body.subId);
 
         if (!parentId || !subId) {
             return res.status(400).json({

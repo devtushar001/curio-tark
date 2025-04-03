@@ -68,7 +68,6 @@ const getAllCategories = async (req, res) => {
 
 const deleteCategory = async (req, res) => {
     try {
-        console.log(req.body)
         const { catId } = req.body;
         const category = await categoryModel.findById(catId);
         if (!category) {

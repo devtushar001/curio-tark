@@ -1,6 +1,5 @@
 import AdminUserModel from "../models/adminUserModel.js";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
 
 export const adminUserSignupController = async (req, res) => {
   try {
@@ -28,7 +27,6 @@ export const adminUserSignupController = async (req, res) => {
 };
 
 export const adminUserLoginController = async (req, res) => {
-  console.log(req.body)
   try {
     const { adminUserEmail, adminUserPassword } = req.body;
 
