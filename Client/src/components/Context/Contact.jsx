@@ -8,7 +8,7 @@ const DochakiContextProvider = (props) => {
     const [cartItem, setCartItem] = useState({});
     const [token, setToken] = useState("");
     const [bikeAccessories, setBikeAccessories] = useState([]);
-    const url = 'https://curio-tark-backend.onrender.com';
+    const url = 'http://localhost:10019';
 
     const fetchBikeAccessoriesList = async () => {
         try {

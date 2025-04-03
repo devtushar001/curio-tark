@@ -70,7 +70,7 @@ const ContactUs = () => {
                 <div className="other-connecting-details">
                     <h4>Other connecting details...</h4>
                     <p>Contact : +91-880-679-5165</p>
-                    <p>Email : dochakidesigns@gmail.com</p>
+                    <p>Email : qurotark@gmail.com</p>
                 </div>
             </div>
             <div className="right-container">

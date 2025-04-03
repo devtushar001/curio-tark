@@ -52,7 +52,7 @@ const ShopCategories = ({ category, setCategory, activeSubCtg, setActiveSubCtg }
     return (
         <>
             {/* Category Selection */}
-            <h2 id="title-ctg">Choose bike brand</h2>
+            <h2 id="title-ctg">Choose a category to filter the product</h2>
             <div className="slider-container">
                 <button className="slider-btn left-btn" onClick={() => scrollSlider("left")}>
                     &lt;

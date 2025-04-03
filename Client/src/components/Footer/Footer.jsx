@@ -23,7 +23,7 @@ const Footer = () => {
                 <div className="footer-content">
                     <div className="footer-content-left">
                         <img className="logo-image" src={assets.logo_blur} alt="" />
-                        <p>Welcome to Dochaki Designs,<br /> We are motivated to give you better product and services....</p>
+                        <p>Welcome to Qurotark,<br /> We are motivated to give you better product and services....</p>
                         <div className="footer-social-icon">
                             <img src={fassets.facebook_icon} alt="" /><img src={fassets.twitter_icon} alt="" /><img src={fassets.linkedin_icon} alt="" />
                         </div>
@@ -41,13 +41,13 @@ const Footer = () => {
                         <h2>GET IN TOUCH</h2>
                         <ul>
                             <li>+91-880-679-5165</li>
-                            <li>dochakidesigns@gmail.com</li>
+                            <li>qurotark@gmail.com</li>
                         </ul>
                     </div>
                 </div>
                 <hr />
                 <p className="footer-copyright">
-                    Copyright 2024 &#169; dochaki.com - All Right Reserved.
+                    copyright 2024 &#169; qurotark.in - all right reserved.
                 </p>
             </div>
         </>

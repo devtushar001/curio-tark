@@ -10,7 +10,7 @@ const Breadcrum = (props) => {
         <>
             <div className="breadcrumb">
                 HOME <img src={fassets.arrow_icon} alt="arrow" />
-                Accessory <img src={fassets.arrow_icon} alt="arrow" />
+                Products <img src={fassets.arrow_icon} alt="arrow" />
                 {category} <img src={fassets.arrow_icon} alt="arrow" />
                 {name}
             </div>
