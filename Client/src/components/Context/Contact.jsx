@@ -8,7 +8,7 @@ const DochakiContextProvider = (props) => {
     const [cartItem, setCartItem] = useState({});
     const [token, setToken] = useState("");
     const [bikeAccessories, setBikeAccessories] = useState([]);
-    const url = 'http://localhost:10019';
+    const url = 'https://quro-tark-backend.onrender.com';
 
     const fetchBikeAccessoriesList = async () => {
         try {
