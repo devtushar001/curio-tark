@@ -18,7 +18,7 @@ const DochakiContextProvider = (props) => {
                 toast.error(result.message);
             } else if (result.success) {
                 console.log(result.data)
-                setBikeAccessories(result.data); 
+                setBikeAccessories(result.data);
             } else {
                 toast.error(result.message);
             }
@@ -29,14 +29,14 @@ const DochakiContextProvider = (props) => {
 
     const readDate = (date) =>
         new Date(date).toLocaleString("en-IN", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: true,
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true,
         });
 
     const addToCart = async (itemId) => {
@@ -71,7 +71,7 @@ const DochakiContextProvider = (props) => {
                 toast.error(result.message);
                 setCartItem((prev) => ({
                     ...prev,
-                    [itemId]: prev[itemId] - 1, 
+                    [itemId]: prev[itemId] - 1,
                 }));
             }
         } catch (error) {
@@ -115,7 +115,7 @@ const DochakiContextProvider = (props) => {
                 toast.error(result.message);
                 setCartItem((prev) => ({
                     ...prev,
-                    [itemId]: prev[itemId] + 1, 
+                    [itemId]: prev[itemId] + 1,
                 }));
             }
         } catch (error) {
@@ -140,7 +140,7 @@ const DochakiContextProvider = (props) => {
 
             const result = await response.json();
             if (response.ok && result.success) {
-                setCartItem(result.cartData); 
+                setCartItem(result.cartData);
             } else {
                 return;
             }
@@ -176,7 +176,7 @@ const DochakiContextProvider = (props) => {
             }
         }
         loadData();
-    }, [token]); 
+    }, [token]);
 
     const contextValue = {
         bikeAccessories,
